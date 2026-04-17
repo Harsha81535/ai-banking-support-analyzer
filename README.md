@@ -30,20 +30,20 @@ This project integrates multiple public banking-related datasets into a unified 
 - Visualization: Streamlit
 - ML Models: Gradient Boosting, ensemble methods
 
-  ## Model Development & Analysis
+## Model Development & Analysis
 
-This project was initially developed and tested using a structured notebook-based pipeline.
+The full model development workflow is documented in the notebook export:
 
-[View Full Analysis Notebook](analysis_notebook.html)
+[Download & View Analysis Notebook](analysis_notebook.html)
 
-### What’s covered in the analysis:
-- Dataset creation and preprocessing from multiple sources  
-- NLP pipeline using RoBERTa and TF-IDF features  
-- Ensemble model experimentation for sentiment classification  
-- Escalation risk modeling using rule-based and meta-classifier approaches  
-- Time-series simulation to study sentiment and escalation trends  
+> To view: download the file and open it in your browser.
 
-> Note: The Streamlit app showcases a production-friendly version of the system, while the notebook captures the full experimentation workflow.
+### This includes:
+- Data preprocessing and dataset creation  
+- NLP pipeline (RoBERTa + TF-IDF)  
+- Ensemble model experimentation  
+- Escalation risk modeling  
+- Time-series simulation and trend analysis  
 
 ## How to Run
 ```bash
