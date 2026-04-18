@@ -41,12 +41,77 @@ This project aims to:
 
 ## Solution
 
-Built an integrated analytics system combining:
-- NLP-based sentiment classification  
-- Intent detection  
-- Escalation risk modeling  
-- Time-series simulation for anomaly detection  
-- Interactive dashboard for business decision-making  
+> End-to-end pipeline from raw multi-source data → NLP modeling → escalation prediction → interactive decision dashboard
+
+Built an end-to-end analytics system through a structured pipeline:
+
+### 1. Data Aggregation & Standardization  
+- Combined multiple datasets (BANKING77, FiQA, Kaggle reviews, financial tweets)  
+- Standardized into a unified schema: `text | intent | sentiment | source`  
+- Cleaned and aligned inconsistent formats across sources  
+
+---
+
+### 2. Sentiment Enrichment (NLP)  
+- Applied a RoBERTa-based model to generate sentiment labels  
+- Augmented datasets lacking sentiment information  
+- Standardized outputs into Positive / Neutral / Negative  
+
+---
+
+### 3. Feature Engineering  
+- Transformed text using TF-IDF (bigrams, stopword removal)  
+- Performed stratified train-test split  
+- Optimized feature space (~6000 features)  
+
+---
+
+### 4. Sentiment Classification Model  
+- Built an ensemble model using:
+  - Logistic Regression  
+  - Random Forest  
+  - XGBoost  
+- Combined predictions using soft voting  
+- Achieved ~81% accuracy  
+
+---
+
+### 5. Escalation Risk Modeling  
+
+**Rule-Based Layer**
+- Assigned baseline risk by intent  
+- Weighted sentiment probabilities to estimate risk  
+
+**Meta-Classifier Layer**
+- Trained Gradient Boosting model on:
+  - sentiment probabilities  
+  - intent risk  
+- Predicted escalation levels: Low / Medium / High  
+
+---
+
+### 6. Time-Series Simulation  
+- Simulated temporal behavior of customer interactions  
+- Tracked daily sentiment and escalation trends  
+- Implemented rolling averages and spike detection  
+- Tested system response using outage-like scenarios  
+
+---
+
+### 7. Interactive Dashboard  
+- Built a Streamlit dashboard for real-time insights  
+- Features:
+  - Sentiment distribution  
+  - Intent–sentiment mapping  
+  - Escalation risk visualization  
+  - Live message testing  
+
+---
+
+### 8. Business Impact  
+- Enabled early identification of high-risk interactions  
+- Improved visibility into customer sentiment trends  
+- Provided a decision-support tool for support teams  
 
 ---
 
